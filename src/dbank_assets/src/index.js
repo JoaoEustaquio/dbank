@@ -32,3 +32,9 @@ document.querySelector("form").addEventListener("submit", async function (e) {
 
   return false;
 });
+
+// Function to round showed value
+async function update() {
+  const currentAmount = await dbank.checkBalance();
+  document.getElementById("value").innerText =  Math.round(currentAmount * 100) / 100;
+}
